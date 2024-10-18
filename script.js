@@ -19,4 +19,4 @@ window.onload = function() {
         const loveLetter = document.getElementById('love-letter');
         loveLetter.classList.add('show'); // Mostrar la carta después de que la página se haya cargado
     }, 100); // Aparece inmediatamente
-};￼Enter
+};
