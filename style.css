@@ -12,13 +12,13 @@ body {
     background-position: center;
 }
 
-/* Ajustar la posición general más abajo */
+/* Ajustar la posición general */
 .container {
     position: relative;
-    max-width: 600px;
+    max-width: 800px; /* Aumentar el ancho del contenedor */
     text-align: center;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
-    padding: 20px;
+    padding: 20px 40px; /* Aumentar el padding horizontal */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin-top: 50px; /* Ajuste para bajar todo el contenido */
@@ -43,15 +43,16 @@ body {
 }
 
 .love-letter h1 {
-    font-size: 32px;
+    font-size: 36px; /* Tamaño de letra más grande */
     color: #ffd700; /* Oro brillante */
     margin-bottom: 20px;
 }
 
 .love-letter p {
-    font-size: 18px;
+    font-size: 20px; /* Tamaño de letra ligeramente más grande */
     color: white;
     margin-bottom: 15px;
+    line-height: 1.6; /* Mayor espaciado entre líneas para mejor lectura */
 }
 
 /* Botón para ocultar la carta */
@@ -60,18 +61,18 @@ body {
     background-image: linear-gradient(to bottom right, #ff9999, #ff4d4d);
     color: white;
     border: none;
-    padding: 8px 12px;
-    font-size: 14px;
-    font-family: 'Courier New', Courier, monospace; /* Fuente estilo carta */
-    border-radius: 20px; /* Bordes redondeados estilo amoroso */
+    padding: 10px 20px; /* Botón más grande */
+    font-size: 16px; /* Fuente más grande */
+    font-family: 'Courier New', Courier, monospace;
+    border-radius: 20px;
     cursor: pointer;
     transition: transform 0.3s ease, background-color 0.3s ease;
-    margin-top: 20px; /* Margen superior para separación del texto */
+    margin-top: 20px;
 }
 
 #toggle-btn:hover {
-    background-color: #ff4d4d; /* Color más intenso en hover */
-    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    background-color: #ff4d4d;
+    transform: scale(1.05);
 }
 
 /* Estilos para la imagen de fondo */
@@ -85,6 +86,6 @@ body {
     background-size: cover;
     background-position: center;
     z-index: -1; /* Imagen detrás del texto */
-    opacity: 1; /* Inicia visible */
-    transition: opacity 0.5s ease-out; /* Transición suave para el fondo */
-}￼Enter
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
