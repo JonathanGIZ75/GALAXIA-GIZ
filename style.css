@@ -1,0 +1,90 @@
+/* Estilos Generales */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Evitar scroll */
+    background-image: url('corazón.webp'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ajustar la posición general más abajo */
+.container {
+    position: relative;
+    max-width: 600px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px; /* Ajuste para bajar todo el contenido */
+}
+
+/* Apartado de la carta de amor */
+.love-letter {
+    opacity: 0; /* Comienza invisible */
+    transform: translateY(-50px); /* Comienza desde arriba */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Clase para mostrar la carta */
+.love-letter.show {
+    opacity: 1; /* Hacer visible */
+    transform: translateY(0); /* Mover a la posición normal */
+}
+
+/* Ocultar carta cuando no está activa */
+.love-letter.hidden {
+    display: none; /* No mostrar la carta si está oculta */
+}
+
+.love-letter h1 {
+    font-size: 32px;
+    color: #ffd700; /* Oro brillante */
+    margin-bottom: 20px;
+}
+
+.love-letter p {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+/* Botón para ocultar la carta */
+#toggle-btn {
+    background-color: #ff7f7f;
+    background-image: linear-gradient(to bottom right, #ff9999, #ff4d4d);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace; /* Fuente estilo carta */
+    border-radius: 20px; /* Bordes redondeados estilo amoroso */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px; /* Margen superior para separación del texto */
+}
+
+#toggle-btn:hover {
+    background-color: #ff4d4d; /* Color más intenso en hover */
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}
+
+/* Estilos para la imagen de fondo */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('corazón.webp'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* Imagen detrás del texto */
+    opacity: 1; /* Inicia visible */
+    transition: opacity 0.5s ease-out; /* Transición suave para el fondo */
+}￼Enter
