@@ -17,25 +17,26 @@
             background-image: url('corazón.webp'); /* Imagen de fondo */
             background-size: cover;
             background-position: center;
+            position: relative; /* Para posicionar el contenedor absoluto */
         }
 
         /* Ajustar la posición general más abajo */
         .container {
-            position: relative;
+            position: absolute; /* Cambiamos a absoluto para permitir que se oculte completamente */
             max-width: 600px;
             text-align: center;
-            background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro transparente */
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro más opaco */
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            margin-top: 50px; /* Ajuste para bajar todo el contenido */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: opacity 0.6s ease-out; /* Transición para el fondo */
         }
 
         /* Apartado de la carta de amor */
         .love-letter {
             opacity: 0; /* Comienza invisible */
             transform: translateY(-50px); /* Comienza desde arriba */
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Suavidad de la transición */
         }
 
         /* Clase para mostrar la carta */
@@ -46,7 +47,64 @@
 
         /* Ocultar carta cuando no está activa */
         .love-letter.hidden {
-            display: none; /* No mostrar la carta si está oculta */
+            opacity: 0; /* Hacer invisible */
+            transform: translateY(-50px); /* Mover hacia arriba al ocultar */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Suavidad de la transición */
+            pointer-events: none; /* Evitar interacción cuando está oculta */
+        }
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi mujer</title>
+    <style>
+        /* Estilos Generales */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden; /* Evitar scroll */
+            background-image: url('corazón.webp'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            position: relative; /* Para posicionar el contenedor absoluto */
+        }
+
+        /* Ajustar la posición general más abajo */
+        .container {
+            position: absolute; /* Cambiamos a absoluto para permitir que se oculte completamente */
+            max-width: 600px;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro más opaco */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: opacity 0.6s ease-out; /* Transición para el fondo */
+        }
+
+        /* Apartado de la carta de amor */
+        .love-letter {
+            opacity: 0; /* Comienza invisible */
+            transform: translateY(-50px); /* Comienza desde arriba */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Suavidad de la transición */
+        }
+
+        /* Clase para mostrar la carta */
+        .love-letter.show {
+            opacity: 1; /* Hacer visible */
+            transform: translateY(0); /* Mover a la posición normal */
+        }
+
+        /* Ocultar carta cuando no está activa */
+        .love-letter.hidden {
+            opacity: 0; /* Hacer invisible */
+            transform: translateY(-50px); /* Mover hacia arriba al ocultar */
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Suavidad de la transición */
+            pointer-events: none; /* Evitar interacción cuando está oculta */
         }
 
         .love-letter h1 {
@@ -67,8 +125,8 @@
             background-image: linear-gradient(to bottom right, #ff9999, #ff4d4d);
             color: white;
             border: none;
-            padding: 8px 12px;
-            font-size: 14px;
+            padding: 10px 15px;
+            font-size: 16px;
             font-family: 'Courier New', Courier, monospace; /* Fuente estilo carta */
             border-radius: 20px; /* Bordes redondeados estilo amoroso */
             cursor: pointer;
@@ -88,12 +146,11 @@
     <!-- Apartado de la carta de amor -->
     <div class="love-letter show" id="love-letter"> <!-- Inicialmente visible -->
         <h1>Mi mujer</h1>
-        <p>Desde el primer momento en que te vi, supe que había encontrado a alguien especial. A lo largo de nuestro tiempo juntos, has llenado mi vida de felicidad, amor y risas.</p>
-        <p>Cada día que paso a tu lado es un recordatorio de lo afortunado que soy de tenerte en mi vida. Eres mi compañera, mi amiga, y el amor de mi vida.</p>
-        <p>No importa lo que el futuro nos depare, sé que mientras estemos juntos, todo será posible. Eres mi fuerza, mi inspiración y mi todo.</p>
-        <p>Te amo más de lo que las palabras pueden expresar, y estoy emocionado por todo lo que aún nos espera. Siempre estaré aquí para ti, apoyándote, amándote y valorando cada momento juntos.</p>
-        <p>Con todo mi amor,</p>
-        <p><strong>Tu compañero de vida, J</strong></p>
+        <p>Desde que llegaste a mi vida, todo ha cambiado para mejor. Aunque seas mayor para mí, eres mi bb porque, a pesar de tu fortaleza, siempre encuentro en ti esa dulzura que me hace querer cuidar de ti. Tu risa y tu energía iluminan mis días, y cada momento a tu lado es un regalo que aprecio profundamente.</p>
+        <p>Admiro tu pasión por la vida y la forma en que enfrentas cada desafío con una sonrisa. Eres una inspiración constante, y me encanta escuchar tus sueños y planes. Me haces sentir que juntos podemos conquistar cualquier cosa, y me siento afortunado de tenerte a mi lado en esta aventura.</p>
+        <p>Siempre estaré aquí para apoyarte, en cada paso del camino. Quiero ser tu refugio y tu compañero, alguien en quien puedas confiar y con quien compartir cada experiencia. Nuestros momentos juntos son únicos y especiales, y espero que sigamos creando recuerdos inolvidables.</p>
+        <p>Nunca dudes de cuánto significas para mí. Estoy emocionado por el futuro que construiremos juntos y por todo lo que aún nos queda por vivir. Gracias por ser tú, por abrirme tu corazón y por permitirme ser parte de tu vida.</p>
+        <p>Tu compañero de vida, J</p>
         <button id="toggle-btn" onclick="toggleLetter()">Ocultar</button> <!-- Botón para ocultar -->
     </div>
 </div>
@@ -102,12 +159,19 @@
     // Función para mostrar u ocultar la carta de amor
     function toggleLetter() {
         const loveLetter = document.getElementById('love-letter');
+        const container = document.querySelector('.container'); // Obtiene el contenedor
         const toggleBtn = document.getElementById('toggle-btn');
 
         if (loveLetter.classList.contains('show')) {
             loveLetter.classList.remove('show');
             loveLetter.classList.add('hidden'); // Ocultar la carta
             toggleBtn.style.display = 'none'; // Ocultar el botón al ocultar la carta
+            container.style.opacity = '0'; // Ocultar el contenedor completamente
+        } else {
+            container.style.opacity = '1'; // Mostrar el contenedor
+            loveLetter.classList.remove('hidden');
+            loveLetter.classList.add('show'); // Mostrar la carta
+            toggleBtn.style.display = 'inline-block'; // Volver a mostrar el botón
         }
     }
 
@@ -120,4 +184,55 @@
     };
 </script>
 </body>
-</html>
+</html>￼Enter
+        .love-letter h1 {
+            font-size: 32px;
+            color: #ffd700; /* Oro brillante */
+            margin-bottom: 20px;
+        }
+
+        .love-letter p {
+            font-size: 18px;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        /* Botón para ocultar la carta */
+        #toggle-btn {
+            background-color: #ff7f7f;
+            background-image: linear-gradient(to bottom right, #ff9999, #ff4d4d);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace; /* Fuente estilo carta */
+            border-radius: 20px; /* Bordes redondeados estilo amoroso */
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            margin-top: 20px; /* Margen superior para separación del texto */
+  }
+
+        #toggle-btn:hover {
+            background-color: #ff4d4d; /* Color más intenso en hover */
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Apartado de la carta de amor -->
+    <div class="love-letter show" id="love-letter"> <!-- Inicialmente visible -->
+        <h1>Mi mujer</h1>
+        <p>Desde que llegaste a mi vida, todo ha cambiado para mejor. Aunque seas mayor para mí, eres mi bb porque, a pesar de tu fortaleza, siempre encuentro en ti esa dulzura que me hace querer cuidar de ti. Tu risa y tu energía iluminan mis días, y cada momento a tu lado es un regalo que aprecio profundamente.</p>
+        <p>Admiro tu pasión por la vida y la forma en que enfrentas cada desafío con una sonrisa. Eres una inspiración constante, y me encanta escuchar tus sueños y planes. Me haces sentir que juntos podemos conquistar cualquier cosa, y me siento afortunado de tenerte a mi lado en esta aventura.</p>
+        <p>Siempre estaré aquí para apoyarte, en cada paso del camino. Quiero ser tu refugio y tu compañero, alguien en quien puedas confiar y con quien compartir cada experiencia. Nuestros momentos juntos son únicos y especiales, y espero que sigamos creando recuerdos inolvidables.</p>
+        <p>Nunca dudes de cuánto significas para mí. Estoy emocionado por el futuro que construiremos juntos y por todo lo que aún nos queda por vivir. Gracias por ser tú, por abrirme tu corazón y por permitirme ser parte de tu vida.</p>
+        <p>Tu compañero de vida, J</p>
+        <button id="toggle-btn" onclick="toggleLetter()">Ocultar</button> <!-- Botón para ocultar -->
+    </div>
+</div>
+
+<script>
+    // Función para mostrar u ocultar la carta de amor
+    function toggleLetter() {
